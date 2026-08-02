@@ -2399,6 +2399,38 @@ img {
     color: var(--text-muted);
 }
 
+/* Responsive fixes for Anti-Hoax steps/cards on small screens */
+@media (max-width: 768px) {
+    /* Force the antihoax grid to a single column on narrow devices */
+    #antihoax .grid.grid-2 {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        grid-auto-rows: auto;
+        gap: 18px;
+    }
+
+    /* Reset explicit child placement so cards flow naturally */
+    #antihoax .grid.grid-2 > .hoax-card {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        min-height: auto !important;
+        padding: 20px 18px !important;
+        border-radius: 16px !important;
+    }
+
+    /* Make the floating badge smaller and reposition so it doesn't overlap content */
+    .hoax-card-badge {
+        top: 12px !important;
+        right: 12px !important;
+        padding: 4px 10px !important;
+        font-size: 0.7rem !important;
+    }
+
+    /* Ensure check list spacing is reasonable */
+    .hoax-check-list { gap: 10px; }
+    .hoax-check-list li { font-size: 0.95rem; padding-left: 22px; }
+}
+
 .fact-card-arrow {
     font-size: 1.2rem;
     color: var(--primary);
