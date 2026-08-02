@@ -469,16 +469,6 @@ app.delete('/api/articles/:id', async (req, res) => {
   res.json({ success: true });
 });
 
-// Fallback GET route untuk menyajikan index.html untuk semua route non-API
-app.get('*', (req, res, next) => {
-  if (req.path.startsWith('/api')) return next();
-  const indexPath = path.join(__dirname, 'index.html');
-  if (fs.existsSync(indexPath)) {
-    return res.sendFile(indexPath);
-  }
-  next();
-});
-
 // ============================================================
 // START SERVER
 // ============================================================
