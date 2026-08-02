@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Resmi Kelurahan Abeli - Kecamatan Abeli, Kota Kendari</title>
+
+    <!-- Meta SEO -->
+    <meta name="description"
+        content="Profil lengkap Kelurahan Abeli, Kecamatan Abeli, Kota Kendari – data administratif, demografi, ekonomi, infrastruktur, layanan publik, kontak, serta program KKN Tematik." />
+    <meta name="keywords" content="Kelurahan Abeli, Abeli Kendari, Profil Abeli, KKN Tematik Abeli, RT RW Abeli">
+    <meta name="author" content="Tim KKN Tematik Kelurahan Abeli">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Leaflet Map CSS (Untuk Peta Lokasi Interaktif) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- Style CSS Utama -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Admin & News CSS -->
+    <link rel="stylesheet" href="admin.css">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <!-- NAVIGASI / HEADER -->
+    <header class="navbar-container">
+        <div class="navbar-wrapper container">
+            <a href="#hero" class="navbar-logo" id="nav-logo">
+                <div class="logo-images">
+                    <img src="images/logo-kendari.png" alt="Logo Sulawesi Tenggara" class="logo-img logo-sultra"
+                        title="Logo Sulawesi Tenggara">
+                    <img src="images/logo-kkn.png" alt="Logo KKN Tematik" class="logo-img logo-kkn"
+                        title="Logo KKN Tematik">
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">KELURAHAN ABELI</span>
+                    <span class="logo-subtitle">Kec. Abeli, Kota Kendari</span>
+                </div>
+            </a>
+
+            <nav class="navbar-menu" id="nav-menu">
+                <a href="#hero" class="nav-link active">Beranda</a>
+                <a href="#berita" class="nav-link">Berita &amp; Kabar</a>
+                <a href="#antihoax" class="nav-link">Edukasi Anti-Hoax</a>
+                <a href="#profil" class="nav-link">Profil Kelurahan</a>
+                <a href="#lokasi" class="nav-link">Peta &amp; Tim</a>
+            </nav>
+
+            <div class="nav-actions" id="nav-actions">
+                <button class="nav-admin-btn" id="nav-admin-login-btn" type="button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    Login Admin
+                </button>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ADMIN LOGIN MODAL OVERLAY -->
+    <div id="login-modal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Tutup Modal">&times;</button>
+            <div class="modal-header">
+                <div class="modal-header-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                </div>
+                <h2 class="modal-title">Admin Login</h2>
+                <p class="modal-subtitle">Masuk untuk mengelola berita & artikel Kelurahan Abeli</p>
+            </div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-username">Username Admin</label>
+                    <input type="text" id="login-username" class="form-control" placeholder="Contoh: admin" required />
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-control" placeholder="••••••••" required />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block"
+                    style="width:100%; margin-top:1rem; padding:0.75rem;">
+                    Masuk ke Admin Panel
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-badge animate-fade-in">KKN Tematik Kelurahan Abeli</span>
+            <h1 class="hero-title animate-slide-up">Sosialisasi &amp; Edukasi<br><span class="highlight">Literasi
+                    Digital Anti-Hoax</span></h1>
+            <p class="hero-desc animate-slide-up">Program Pengabdian Masyarakat KKN Tematik di Kelurahan Abeli.
+                Mewujudkan warga yang cerdas, bijak, dan kritis dalam menyaring informasi di media sosial.</p>
+            <div class="hero-actions animate-slide-up">
+                <a href="#antihoax" class="btn btn-primary">
+                    Edukasi Anti-Hoax
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+                <a href="#profil" class="btn btn-secondary">Profil Kelurahan</a>
+            </div>
+        </div>
+        <!-- Wave Divider Bottom -->
+        <div class="hero-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path d="M0,0 C150,90 350,-40 500,65 C650,170 900,10 1200,40 L1200,120 L0,120 Z" class="shape-fill">
+                </path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- SECTION PUBLIC BERITA & ARTIKEL -->
+    <section id="berita" class="section bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="section-tag">Pusat Informasi &amp; Kabar Abeli</div>
+                <h2 class="section-title">Berita, Daily Report KKN &amp; Edukasi</h2>
+                <p class="section-desc">Kumpulan informasi terkini, laporan harian kegiatan KKN, dan artikel edukasi
+                    literasi digital untuk seluruh warga Kelurahan Abeli.</p>
+            </div>
+
+            <!-- News Cards Container -->
+            <div id="news-grid-container" class="news-grid">
+                <!-- Dynamically rendered by admin.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAM UNGGULAN KKN: SOSIALISASI ANTI-HOAX -->
+    <section id="antihoax" class="section bg-white bg-pattern-waves">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="section-tag">Program Unggulan KKN Tematik</div>
+                <h2 class="section-title">Sosialisasi Literasi Digital &amp; Anti-Hoax</h2>
+                <p class="section-desc">Edukasi bagi warga Kelurahan Abeli untuk mengenali, memverifikasi, dan
+                    menghentikan penyebaran berita bohong di media sosial demi terciptanya lingkungan informasi yang
+                    sehat dan harmonis.</p>
+            </div>
+
+            <!-- SLOGAN UTAMA KKN BANNER -->
+            <div class="slogan-banner animate-scroll">
+                <span class="slogan-badge-label">Slogan Resmi KKN Abeli</span>
+                <h3 class="slogan-headline">"Saring Sebelum Sharing!"</h3>
+                <p class="slogan-sub">Pastikan kebenaran dan keabsahan informasi sebelum membagikannya di grup WhatsApp,
+                    Facebook, maupun media sosial keluarga.</p>
+            </div>
+
+            <!-- Grid Card Edukasi Anti-Hoax -->
+            <div class="grid grid-2 gap-4 mt-5">
+                <!-- Card 1: Ciri-ciri Hoax -->
+                <div class="card hoax-card animate-scroll">
+                    <div class="hoax-card-badge badge-danger">Langkah 1</div>
+                    <div class="hoax-icon text-primary">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                            </path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Ciri-Ciri Berita Hoax</h3>
+                    <ul class="hoax-check-list">
+                        <li><strong>Judul Provokatif:</strong> Menggunakan kalimat heboh, sensasional, dan memicu
+                            ketakutan atau kemarahan.</li>
+                        <li><strong>Sumber Tidak Jelas:</strong> Mengutip "sumber terpercaya" tanpa mencantumkan nama
+                            institusi/penulis resmi.</li>
+                        <li><strong>Paksaan Menyebarkan:</strong> Mengandung pesan seperti *"Sebarkan ke 10 grup!"* atau
+                            *"Wajib bagikan sebelum dihapus!"*.</li>
+                        <li><strong>Foto &amp; Video Edit:</strong> Gambar lama atau peristiwa lain yang diberi narasi
+                            palsu/pelintiran.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Waspada Hoax AI (Artificial Intelligence) -->
+                <div class="card hoax-card animate-scroll border-purple">
+                    <div class="hoax-card-badge badge-purple">Teknologi Baru</div>
+                    <div class="hoax-icon text-purple">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+                            <circle cx="12" cy="5" r="2"></circle>
+                            <path d="M12 7v4"></path>
+                            <line x1="8" y1="16" x2="8.01" y2="16"></line>
+                            <line x1="16" y1="16" x2="16.01" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Waspada Hoax Berbasis AI (Artificial Intelligence)</h3>
+                    <ul class="hoax-check-list">
+                        <li><strong>Deepfake Video &amp; Suara:</strong> Rekayasa kecerdasan buatan yang menirukan wajah
+                            &amp; suara tokoh/pejabat untuk penipuan.</li>
+                        <li><strong>Gambar Rekayasa AI:</strong> Foto Bencana / Peristiwa palsu hasil buatan AI
+                            (perhatikan tekstur kulit aneh / jumlah jari yang salah).</li>
+                        <li><strong>Teks Berita Otomatis:</strong> Artikel narasi kebencian atau hadiah palsu yang
+                            digenerate oleh Bot/AI.</li>
+                        <li><strong>Cara Deteksi AI:</strong> Cek gerak bibir video yang kaku, distorsi bayangan foto,
+                            dan telusuri berita asli di media terverifikasi.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Cara Verifikasi -->
+                <div class="card hoax-card animate-scroll">
+                    <div class="hoax-card-badge badge-info">Langkah 2</div>
+                    <div class="hoax-icon text-primary">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Kanal Verifikasi &amp; Cek Fakta</h3>
+                    <ul class="hoax-check-list">
+                        <li><strong>TurnBackHoax.id:</strong> Basis data verifikasi berita hoax yang dikelola Masyarakat
+                            Anti Fitnah Indonesia (Mafindo).</li>
+                        <li><strong>CekFakta.com:</strong> Kolaborasi media nasional independen untuk memeriksa klaim
+                            informasi.</li>
+                        <li><strong>Google Image Search:</strong> Cari asal-usul foto untuk memastikan apakah foto
+                            tersebut hasil suntingan.</li>
+                        <li><strong>AduanKonten.id (Kominfo):</strong> Laporkan konten negatif dan hoax ke Kementerian
+                            Kominfo RI.</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4: Sanksi & Etika -->
+                <div class="card hoax-card animate-scroll">
+                    <div class="hoax-card-badge badge-warning">Langkah 3</div>
+                    <div class="hoax-icon text-gold">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Sanksi Hukum &amp; Keharmonisan Warga</h3>
+                    <ul class="hoax-check-list">
+                        <li><strong>Jerat UU ITE:</strong> Penyebar berita bohong dan menyesatkan diancam pidana penjara
+                            &amp; denda sesuai UU ITE.</li>
+                        <li><strong>Jaga Kerukunan RT/RW:</strong> Hoax dapat memicu permusuhan antar tetangga di
+                            lingkungan Kelurahan Abeli.</li>
+                        <li><strong>Lindungi Keluarga:</strong> Bimbing anak-anak dan lansia agar tidak mudah
+                            terpengaruh isu hoax kesehatan/penipuan.</li>
+                        <li><strong>Budaya Tabayyun:</strong> Utamakan konfirmasi dan musyawarah jika menerima isu
+                            miring tentang warga kelurahan.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- LINK RESMI CEK FAKTA PORTAL BOX -->
+            <div class="fact-check-links-box mt-5 animate-scroll">
+                <div class="fact-box-header">
+                    <span class="fact-box-tag">Portal Resmi Cek Fakta</span>
+                    <h3>Link Periksa Kebenaran Berita</h3>
+                    <p>Klik tombol portal resmi di bawah ini jika Anda menerima berita meragukan untuk memastikan apakah
+                        berita tersebut fakta atau hoax:</p>
+                </div>
+                <div class="fact-links-grid">
+                    <a href="https://turnbackhoax.id" target="_blank" rel="noopener" class="fact-link-card">
+                        <div class="fact-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </div>
+                        <div class="fact-card-info">
+                            <strong>TurnBackHoax.id</strong>
+                            <span>Database Hoaks Terlengkap Mafindo</span>
+                        </div>
+                        <span class="fact-card-arrow">&rarr;</span>
+                    </a>
+
+                    <a href="https://cekfakta.com" target="_blank" rel="noopener" class="fact-link-card">
+                        <div class="fact-card-icon icon-teal">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <path d="M9 12l2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <div class="fact-card-info">
+                            <strong>CekFakta.com</strong>
+                            <span>Konsorsium Media Nasional Indonesia</span>
+                        </div>
+                        <span class="fact-card-arrow">&rarr;</span>
+                    </a>
+
+                    <a href="https://kominfo.go.id/content/all/laporan_isu_hoaks" target="_blank" rel="noopener"
+                        class="fact-link-card">
+                        <div class="fact-card-icon icon-navy">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 21h18M3 7v14M21 7v14M6 7v14M18 7v14M10 7v14M14 7v14M12 3L2 7h20L12 3z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="fact-card-info">
+                            <strong>Kemenkominfo RI</strong>
+                            <span>Laporan Isu Hoaks Resmi Pemerintah</span>
+                        </div>
+                        <span class="fact-card-arrow">&rarr;</span>
+                    </a>
+
+                    <a href="https://wa.me/6281196900500?text=Halo%20CekFakta%20tolong%20periksa%20informasi%20ini"
+                        target="_blank" rel="noopener" class="fact-link-card wa-fact-card">
+                        <div class="fact-card-icon icon-green">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="fact-card-info">
+                            <strong>WhatsApp CekFakta Mafindo</strong>
+                            <span>Chat Bot Cek Berita Otomatis</span>
+                        </div>
+                        <span class="fact-card-arrow">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SAMBUTAN LURAH & PROFIL (VISI & MISI) -->
+    <section id="profil" class="section bg-light bg-pattern-dots">
+        <div class="container">
+            <!-- Grid Sambutan & Info Singkat -->
+            <div class="grid grid-2 gap-4 align-center mb-5">
+                <div class="lurah-card animate-scroll">
+                    <!-- FOTO LURAH (User sisa mengganti path foto di src) -->
+                    <div class="lurah-photo-wrapper">
+                        <img src="images/foto-lurah.jpeg" alt="Lurah Kelurahan Abeli" class="lurah-photo" id="lurah-img">
+                        <div class="lurah-badge">Lurah Abeli</div>
+                    </div>
+                    <div class="lurah-info">
+                        <h3>ENDANG KASNAWATI, S.IP</h3>
+                        <p class="lurah-nip">NIP. 198405222009012003</p>
+                    </div>
+                </div>
+
+                <div class="sambutan-text animate-scroll">
+                    <div class="section-tag">Sambutan Lurah</div>
+                    <h2 class="section-title">Melayani Masyarakat dengan Integritas dan Kolaborasi</h2>
+                    <p class="text-muted leading-relaxed">"Selamat datang di portal informasi digital Kelurahan Abeli.
+                        Kami berkomitmen untuk terus meningkatkan pelayanan publik yang transparan, profesional, dan
+                        inklusif. Melalui sinergi bersama Ketua RW, RT, serta program pengabdian KKN Tematik mahasiswa,
+                        kita bersama-sama mewujudkan Kelurahan Abeli yang mandiri, maju, dan harmonis."</p>
+                    <div class="quote-signature">
+                        <strong>ENDANG KASNAWATI, S.IP.</strong>
+                        <span>Lurah Kelurahan Abeli</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visi & Misi Cards -->
+            <div class="section-header text-center mt-5">
+                <div class="section-tag">Visi & Misi</div>
+                <h2 class="section-title">Arah Pembangunan Kelurahan Abeli</h2>
+            </div>
+
+            <div class="grid grid-3 gap-3">
+                <!-- Visi Card -->
+                <div class="card val-card animate-scroll">
+                    <div class="card-icon-wrapper text-primary">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Visi</h3>
+                    <p class="card-desc text-muted">"Terwujudnya Kelurahan Abeli sebagai kawasan hunian dan pusat
+                        ekonomi pesisir yang tertib, aman, sejahtera, serta berbasis gotong royong."</p>
+                </div>
+
+                <!-- Misi Card -->
+                <div class="card val-card animate-scroll">
+                    <div class="card-icon-wrapper text-teal">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Misi Pelayanan</h3>
+                    <p class="card-desc text-muted">Meningkatkan kinerja aparatur kelurahan dalam memberikan pelayanan
+                        publik yang cepat, tepat, transparan, prima, dan bebas dari pungutan liar.</p>
+                </div>
+
+                <!-- Misi Pembangunan Card -->
+                <div class="card val-card animate-scroll">
+                    <div class="card-icon-wrapper text-gold">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Misi Kemasyarakatan</h3>
+                    <p class="card-desc text-muted">Mendorong partisipasi aktif lembaga RT/RW dan elemen masyarakat
+                        dalam perencanaan pembangunan fisik serta pemberdayaan ekonomi lokal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Kelurahan Abeli Information (Redesigned) -->
+    <section id="detail-profil" class="section bg-white bg-pattern-grid">
+        <div class="container">
+            <!-- Small hero / header -->
+            <div class="profile-hero">
+                <div class="profile-hero-left">
+                    <h3 class="section-title">Profil Kelurahan Abeli</h3>
+                    <p class="section-desc">Mengenal lebih dekat wilayah, layanan, potensi, dan karakteristik Kelurahan Abeli.</p>
+                </div>
+                <div class="profile-hero-right">
+                    <div class="hero-illustration"><i class="ph ph-map-pin"></i></div>
+                </div>
+            </div>
+
+            <!-- Highlight Stats (separate section block) -->
+            <div class="section-block stats-section animate-scroll">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="ph ph-users"></i></div>
+                        <div class="stat-value" data-target="12000">0</div>
+                        <div class="stat-label">Penduduk</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="ph ph-house"></i></div>
+                        <div class="stat-value">
+                            <span class="small-num" data-target="4">0</span>
+                            <span class="small-sep"> / </span>
+                            <span class="small-num" data-target="8">0</span>
+                        </div>
+                        <div class="stat-label">RW / RT</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="ph ph-map-pin"></i></div>
+                        <div class="stat-value">Kendari</div>
+                        <div class="stat-label">Kota / Kabupaten</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="ph ph-waves"></i></div>
+                        <div class="stat-value">Pesisir</div>
+                        <div class="stat-label">Karakter Wilayah</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main grid: Identitas | Potensi & Demografi (split into blocks) -->
+            <div class="profile-grid">
+                <div class="profile-col">
+                    <div class="section-block ident-section animate-scroll">
+                        <div class="card ident-card">
+                            <h4>Identitas Administratif</h4>
+                            <div class="ident-list">
+                                <div class="ident-row"><span class="ident-icon"><i class="ph ph-map-pin"></i></span><div><strong>Nama:</strong> Kelurahan Abeli</div></div>
+                                <div class="ident-row"><span class="ident-icon"><i class="ph ph-bank"></i></span><div><strong>Kecamatan:</strong> Abeli</div></div>
+                                <div class="ident-row"><span class="ident-icon"><i class="ph ph-buildings"></i></span><div><strong>Kota / Kab:</strong> Kendari</div></div>
+                                <div class="ident-row"><span class="ident-icon"><i class="ph ph-mailbox"></i></span><div><strong>Kode Pos:</strong> 93131</div></div>
+                                <div class="ident-row"><span class="ident-icon"><i class="ph ph-map-pin"></i></span><div><strong>Koordinat:</strong> 3.9987° S, 122.5780° E</div></div>
+                                <div class="ident-row"><span class="ident-icon"><i class="ph ph-user-circle"></i></span><div><strong>Lurah:</strong> ENDANG KASNAWATI, S.IP</div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-block demo-section animate-scroll">
+                        <div class="card demography-card">
+                            <h4>Demografi</h4>
+                            <div class="demography-section">
+                                <div class="dem-row">
+                                    <div class="dem-label">0-14</div>
+                                    <div class="dem-progress"><div class="dem-bar" data-target="30" style="width:0%"></div></div>
+                                    <div class="dem-value" data-target="30">0%</div>
+                                </div>
+                                <div class="dem-row">
+                                    <div class="dem-label">15-64</div>
+                                    <div class="dem-progress"><div class="dem-bar" data-target="60" style="width:0%"></div></div>
+                                    <div class="dem-value" data-target="60">0%</div>
+                                </div>
+                                <div class="dem-row">
+                                    <div class="dem-label">65+</div>
+                                    <div class="dem-progress"><div class="dem-bar" data-target="10" style="width:0%"></div></div>
+                                    <div class="dem-value" data-target="10">0%</div>
+                                </div>
+
+                                <h5 class="mt-3">Pendidikan</h5>
+                                <div class="dem-row">
+                                    <div class="dem-label">SD</div>
+                                    <div class="dem-progress"><div class="dem-bar" data-target="78" style="width:0%"></div></div>
+                                    <div class="dem-value" data-target="78">0%</div>
+                                </div>
+                                <div class="dem-row">
+                                    <div class="dem-label">SMP</div>
+                                    <div class="dem-progress"><div class="dem-bar" data-target="65" style="width:0%"></div></div>
+                                    <div class="dem-value" data-target="65">0%</div>
+                                </div>
+                                <div class="dem-row">
+                                    <div class="dem-label">SMA</div>
+                                    <div class="dem-progress"><div class="dem-bar" data-target="48" style="width:0%"></div></div>
+                                    <div class="dem-value" data-target="48">0%</div>
+                                </div>
+                                <div class="dem-row">
+                                    <div class="dem-label">PT</div>
+                                    <div class="dem-progress"><div class="dem-bar" data-target="12" style="width:0%"></div></div>
+                                    <div class="dem-value" data-target="12">0%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-col">
+                    <div class="section-block potensi-section animate-scroll">
+                        <div class="card potensi-card">
+                            <h4>Potensi & Ekonomi</h4>
+                            <div class="potensi-grid">
+                                <div class="potensi-item"><div class="pot-icon"><i class="ph ph-fish"></i></div><strong>Perikanan</strong><div class="pot-desc">Sentra nelayan & produksi hasil laut.</div></div>
+                                <div class="potensi-item"><div class="pot-icon"><i class="ph ph-fish-simple"></i></div><strong>UMKM</strong><div class="pot-desc">Olahan makanan & kerajinan lokal.</div></div>
+                                <div class="potensi-item"><div class="pot-icon"><i class="ph ph-storefront"></i></div><strong>Perdagangan</strong><div class="pot-desc">Pasar lokal & kios pesisir.</div></div>
+                                <div class="potensi-item"><div class="pot-icon"><i class="ph ph-anchor"></i></div><strong>Maritim</strong><div class="pot-desc">Konektivitas pelabuhan kecil & logistik.</div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-block infra-section animate-scroll">
+                        <div class="card infra-card">
+                            <h4>Infrastruktur & Layanan</h4>
+                            <div class="infra-grid">
+                                <div class="infra-item"><i class="ph ph-graduation-cap"></i><div>2 SD, 1 SMP, 1 SMA</div></div>
+                                <div class="infra-item"><i class="ph ph-first-aid"></i><div>Posyandu, Puskesmas</div></div>
+                                <div class="infra-item"><i class="ph ph-bus"></i><div>Angkutan Umum & Jalan</div></div>
+                                <div class="infra-item"><i class="ph ph-drop"></i><div>PDAM & Internet</div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-block kontak-section animate-scroll">
+                        <div class="card contact-card">
+                            <h4>Kontak & Lokasi</h4>
+                            <div class="contact-content">
+                                <div><strong>Alamat:</strong> Jl. Poros Abeli No. 12, Kel. Abeli, Kec. Abeli</div>
+                                <div><strong>Telepon:</strong> (0401) 123 456</div>
+                                <div><strong>Email:</strong> kelurahan.abeli@kendarikota.go.id</div>
+                                <div><strong>Jam:</strong> Senin‑Jumat 08:00‑16:00 WITA</div>
+                                <div class="map-embed" style="display:flex; gap:0.6rem; align-items:center;">
+                                    <button id="open-abeli-map-btn" type="button" class="btn btn-primary">Peta Interaktif</button>
+                                    <a class="btn btn-secondary" href="https://share.google/JcKXTIO27Zk3yDNNX" target="_blank" rel="noopener noreferrer">Buka di Google Maps</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOKASI KELURAHAN -->
+    <section id="lokasi" class="section bg-light bg-pattern-dots">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="section-tag">Letak Geografis</div>
+                <h2 class="section-title">Lokasi Kelurahan Abeli</h2>
+                <p class="section-desc">Terletak di Kecamatan Abeli, Kota Kendari, Sulawesi Tenggara. Kelurahan ini
+                    memiliki wilayah pesisir strategis.</p>
+            </div>
+
+            <div class="grid grid-location gap-4 mt-4">
+                <!-- Leaflet Interactive Map Container -->
+                <div class="map-card animate-scroll">
+                    <div id="map" class="interactive-map"></div>
+                </div>
+
+                <!-- Geographics Info Card -->
+                <div class="info-card-wrapper animate-scroll">
+                    <div class="card info-card">
+                        <h3 class="info-card-title">Batas-Batas Wilayah</h3>
+                        <ul class="boundary-list">
+                            <li>
+                                <span class="direction">Utara</span>
+                                <span class="boundary-name">Teluk Kendari</span>
+                            </li>
+                            <li>
+                                <span class="direction">Timur</span>
+                                <span class="boundary-name">Kelurahan Lapulu</span>
+                            </li>
+                            <li>
+                                <span class="direction">Selatan</span>
+                                <span class="boundary-name">Kelurahan Poasia / Anggalomelai</span>
+                            </li>
+                            <li>
+                                <span class="direction">Barat</span>
+                                <span class="boundary-name">Kelurahan Talia</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card info-card bg-gradient-blue text-white mt-3">
+                        <h3 class="info-card-title text-white">Informasi Geografis</h3>
+                        <div class="geo-details">
+                            <div class="geo-item">
+                                <span class="label">Kecamatan</span>
+                                <strong class="value">Abeli</strong>
+                            </div>
+                            <div class="geo-item">
+                                <span class="label">Kota</span>
+                                <strong class="value">Kendari</strong>
+                            </div>
+                            <div class="geo-item">
+                                <span class="label">Koordinat</span>
+                                <strong class="value">3.9987° S, 122.5780° E</strong>
+                            </div>
+                            <div class="geo-item">
+                                <span class="label">Potensi Wilayah</span>
+                                <strong class="value">Perikanan & Perdagangan Pesisir</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORGANISASI & PERKUMPULAN RESMI -->
+    <section id="organisasi" class="section bg-white bg-pattern-grid">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="section-tag">Kelembagaan Warga</div>
+                <h2 class="section-title">Organisasi & Perkumpulan Resmi</h2>
+                <p class="section-desc">Daftar organisasi kemasyarakatan resmi yang aktif berkontribusi dalam
+                    pembangunan dan pemberdayaan di Kelurahan Abeli.</p>
+            </div>
+
+            <div class="grid grid-3 gap-3">
+                <!-- Organisasi 1: PKK -->
+                <div class="card org-card-item animate-scroll">
+                    <h3 class="card-title">PKK Kelurahan Abeli</h3>
+                    <div class="org-photos-container">
+                        <!-- User tinggal mengganti/menambah file foto lokal -->
+                        <img src="images/kegiatan-pkk1.jpeg" alt="Kegiatan PKK 1" class="org-photo">
+                        <img src="images/kegiatan-pkk2.jpeg" alt="Kegiatan PKK 2" class="org-photo">
+                    </div>
+                    <p class="org-desc text-muted text-small mt-3">
+                        Pemberdayaan Kesejahteraan Keluarga (PKK) Kelurahan Abeli aktif menggerakkan program posyandu,
+                        posbindu, pembinaan UMKM ibu-ibu, dan peningkatan ketahanan pangan tingkat rumah tangga.
+                    </p>
+                </div>
+
+                <!-- Organisasi 2: Karang Taruna -->
+                <div class="card org-card-item animate-scroll">
+                    <h3 class="card-title">Karang Taruna Abeli</h3>
+                    <div class="org-photos-container single-photo">
+                        <!-- Menampilkan hanya 1 foto jika dokumentasi terbatas -->
+                        <img src="images/karang-taruna.png" alt="Kegiatan Karang Taruna" class="org-photo">
+                    </div>
+                    <p class="org-desc text-muted text-small mt-3">
+                        Wadah pengembangan generasi muda Kelurahan Abeli yang fokus pada kegiatan kepemudaan, pembinaan
+                        olahraga, kesenian, aksi sosial, serta tanggap bencana di lingkungan kelurahan.
+                    </p>
+                </div>
+
+                <!-- Organisasi 3: LPM -->
+                <div class="card org-card-item animate-scroll">
+                    <h3 class="card-title">LPM Kelurahan Abeli</h3>
+                    <div class="org-photos-container">
+                        <!-- Menampilkan 2 foto -->
+                        <img src="images/rapat-lpm-1.png" alt="Kegiatan LPM 1" class="org-photo">
+                        <img src="images/kerja-bakti-lpm.png" alt="Kegiatan LPM 2" class="org-photo">
+                    </div>
+                    <p class="org-desc text-muted text-small mt-3">
+                        Lembaga Pemberdayaan Masyarakat (LPM) bertindak sebagai mitra strategis kelurahan dalam
+                        merencanakan pembangunan fisik, menyalurkan aspirasi Musrenbang, dan memelihara gotong royong
+                        warga.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STRUKTUR ORGANISASI KELURAHAN (INTERAKTIF) -->
+
+<section id="struktur" class="section bg-light-gradient bg-pattern-dots">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="section-tag">Kelembagaan</div>
+                <h2 class="section-title">Struktur Organisasi Kelurahan Abeli</h2>
+            </div>
+
+            <!-- Interaktif Org Tree Grid -->
+            <div class="org-container animate-scroll">
+
+                <div class="org-level level-lurah">
+                    <div class="org-card lurah-node">
+                        <div class="node-title">LURAH ABELI</div>
+                        <div class="node-name">ENDANG KASNAWATI, S. IP.</div>
+                        <div class="node-meta">NIP. 19840522 200901 2 003</div>
+                    </div>
+                </div>
+                <div class="org-divider-line"></div>
+                <div class="org-level level-sekretaris">
+                    <div class="org-card sekretaris-node">
+                        <div class="node-title">SEKRETARIS LURAH</div>
+                        <div class="node-name">ASRIANI, SM</div>
+                        <div class="node-meta">NIP. 19830422 200901 2 001</div>
+                    </div>
+                    <div class="org-sublist">
+                        <div class="org-card staff-node">
+                            <div class="node-title">Staf Sekretariat</div>
+                            <div class="node-name">ISRAWATI</div>
+                            <div class="node-meta">NIP. 19680826 200504 2 003</div>
+                        </div>
+                        <div class="org-card staff-node">
+                            <div class="node-title">Staf Sekretariat</div>
+                            <div class="node-name">ASNANI SUCIATY</div>
+                            <div class="node-meta">NIP. 19810713 202521 2 023</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="org-divider-line"></div>
+                <div class="kepala-row">
+                    <div class="org-level level-kepala-seksi">
+                        <div class="org-card kepala-node">
+                            <div class="node-title">KEPALA SEKSI PEMERINTAHAN DAN PELAYANAN PUBLIK</div>
+                            <div class="node-name">YUNIUS, S.KOM, M.MAP</div>
+                            <div class="node-meta">NIP. 19791007 200801 1 008</div>
+                        </div>
+                        <div class="org-sublist">
+                            <div class="org-card staff-node">
+                                <div class="node-title">Staf</div>
+                                <div class="node-name">WA ODE FITRIA, SE</div>
+                                <div class="node-meta">NIP. 19840705 202521 2 113</div>
+                            </div>
+                            <div class="org-card staff-node">
+                                <div class="node-title">Staf</div>
+                                <div class="node-name">DENY HERMAWAN</div>
+                                <div class="node-meta">NIP. 19851027 202521 1 078</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="org-level level-kepala-seksi">
+                        <div class="org-card kepala-node">
+                            <div class="node-title">KEPALA SEKSI PEMBANGUNAN DAN PEMBERDAYAAN MASYARAKAT</div>
+                            <div class="node-name">MUHAMMAD SYARIF MANGUN, SE, MM</div>
+                            <div class="node-meta">NIP. 19850527 201407 1 001</div>
+                        </div>
+                        <div class="org-sublist">
+                            <div class="org-card staff-node">
+                                <div class="node-title">Staf</div>
+                                <div class="node-name">ALPIN</div>
+                                <div class="node-meta">NIP. 19730208 202521 1 045</div>
+                            </div>
+                            <div class="org-card staff-node">
+                                <div class="node-title">Staf</div>
+                                <div class="node-name">MUHAMAD SYAHID</div>
+                                <div class="node-meta">NIP. 19770226 202521 1 025</div>
+                            </div>
+                            <div class="org-card staff-node">
+                                <div class="node-title">Staf</div>
+                                <div class="node-name">MUHAMMAD NUR</div>
+                                <div class="node-meta">NIP. 19841029 202521 1 065</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="org-level level-kepala-seksi">
+                        <div class="org-card kepala-node">
+                            <div class="node-title">KEPALA SEKSI KETENTRAMAN DAN KETERTIBAN</div>
+                            <div class="node-name">RASMAN, S.SOS</div>
+                            <div class="node-meta">NIP. 19710422 201001 1 001</div>
+                        </div>
+                        <div class="org-sublist">
+                            <div class="org-card staff-node">
+                                <div class="node-title">Staf</div>
+                                <div class="node-name">RISNAWATI</div>
+                                <div class="node-meta">NIP. 19740709 202521 2 012</div>
+                            </div>
+                            <div class="org-card staff-node">
+                                <div class="node-title">Staf</div>
+                                <div class="node-name">ANWAR</div>
+                                <div class="node-meta">NIP. 19721231 202521 1 239</div>
+                            </div>
+                            <div class="org-card staff-node">
+                                <div class="node-title">Staf</div>
+                                <div class="node-name">SRI KENCANA</div>
+                                <div class="node-meta">NIP. 19681105 202521 2 014</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+
+            
+        </div>
+    </section>
+
+    <!-- GALERI KEGIATAN KELURAHAN -->
+    <section id="galeri" class="section bg-white bg-pattern-grid">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="section-tag">Dokumentasi</div>
+                <h2 class="section-title">Galeri Kegiatan Warga</h2>
+                <p class="section-desc">Kumpulan dokumentasi foto kegiatan sosial, pembangunan fisik, dan musyawarah
+                    yang diselenggarakan oleh warga Kelurahan Abeli.</p>
+            </div>
+
+            <div class="gallery-grid animate-scroll">
+                <!-- Item 1 -->
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <img src="images/galeri-sdn 33 kendari.png" alt="Gotong Royong Warga" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-item-title">Bermain Sambil Belajar SDN 33 Kendari</h3>
+                            <p class="gallery-item-desc">Eksperimen Sains dan edukasi mengenai Hoax pada usia dini Di
+                                SDN 33 Kendari.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <img src="images/galeri-SOSIALISASI HOAX.jpg" alt="Sosialisasi Hoax" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-item-title">Sosialisasi Hoax Warga Kelurahan Abeli</h3>
+                            <p class="gallery-item-desc">Perencanaan pembangunan kelurahan secara partisipatif bersama
+                                tokoh masyarakat.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <img src="images/galeri-KERJA SAMA PKK.jpg" alt="Pelayanan Posyandu" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-item-title">Kerja Sama PKK Kegiatan Lomba TKN 12 Kendari</h3>
+                            <p class="gallery-item-desc">Program Kerja Sama PKK dalam mengadakan lomba bermain pada
+                                siswa/i TKN 12 Kendari</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <img src="images/galeri-LOMBA BERMAIN ANAK-ANAK KELURAHAN ABELI.jpg" alt="Penyaluran Bantuan"
+                            class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-item-title">Lomba Permainan Anak-anak Kelurahan Abeli</h3>
+                            <p class="gallery-item-desc">Kemeriahan berbagai Lomba permainan anak-anak bersama anak-anak
+                                kelurahan
+                                Abeli</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <img src="images/galeri-musyawarah.png" alt="Peringatan Hari Nasional" class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-item-title">Kerja Bakti Bersama Masyarakat</h3>
+                            <p class="gallery-item-desc">Kerja sama Masyarakat dalam kerja bakti membersihkan beberapa
+                                titik di Kelurahan Abeli</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <img src="images/galeri-dekorasi menuju hut ri.jpg" alt="Kerja Bakti Pesisir"
+                            class="gallery-img">
+                        <div class="gallery-overlay">
+                            <h3 class="gallery-item-title">Persiapan Peringatan Hari Kemerdekaan</h3>
+                            <p class="gallery-item-desc">Kerja sama Kelurahan dan Masyarakat dalam mempersiapkan
+                                perayaan HUT RI 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIM PENGEMBANG (KKN TEMATIK) -->
+    <section id="kkn" class="section bg-light bg-pattern-dots">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="section-tag">Program Kerja Tematik</div>
+                <h2 class="section-title">Tim Pengembang KKN Tematik</h2>
+                <p class="section-desc">Website ini didevelop secara khusus oleh tim IT KKN Tematik dan didukung oleh
+                    seluruh anggota kelompok KKN Kelurahan Abeli.</p>
+            </div>
+
+            <!-- INSTAGRAM KKN BANNER -->
+            <div class="kkn-instagram-card animate-scroll">
+                <div class="ig-card-inner">
+                    <div class="ig-icon-wrapper">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </div>
+                    <div class="ig-info">
+                        <span class="ig-label">Media Sosial Resmi KKN</span>
+                        <h3 class="ig-handle">@kkn.abeli2026</h3>
+                        <p class="ig-desc">Ikuti media sosial Instagram KKN Kelurahan Abeli untuk melihat infografis
+                            edukasi anti-hoax, video sosialisasi warga, dan liputan kegiatan harian pengabdian kami!</p>
+                    </div>
+                    <a href="https://www.instagram.com/kknstories.abeli26?igsh=aTJpa3Jsc2t1ZXpv" target="_blank"
+                        rel="noopener" class="btn btn-primary ig-btn">
+                        Kunjungi Instagram KKN &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- Developer Utama (3 Orang) -->
+            <div class="kkn-subtitle mt-5 mb-4 text-center">
+                <span class="sub-tag">Tim Developer</span>
+            </div>
+
+            <div class="grid grid-3 gap-3 max-w-lg mx-auto">
+                <!-- Developer 1 -->
+                <div class="card dev-card animate-scroll">
+                    <div class="dev-img-wrapper">
+                        <!-- FOTO DEV 1 (User tinggal ganti file lokal) -->
+                        <img src="images/dev-1.png" alt="Developer KKN 1" class="dev-img">
+                    </div>
+                    <div class="dev-info text-center">
+                        <h3 class="dev-name"> Rezki Alya Pasrun</h3>
+                        <p class="dev-role text-primary">Full-Stack Developer</p>
+                        <p class="dev-bio text-muted text-small">Mahasiswa Teknik Informatika. Bertanggung jawab atas
+                            desain arsitektur web dan interaktivitas.</p>
+                        <div class="dev-links">
+                            <a href="#" class="dev-social" aria-label="GitHub">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="#" class="dev-social" aria-label="Instagram">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Developer 2 -->
+                <div class="card dev-card animate-scroll">
+                    <div class="dev-img-wrapper">
+                        <!-- FOTO DEV 2 (User tinggal ganti file lokal) -->
+                        <img src="images/dev-2.png" alt="Developer KKN 2" class="dev-img">
+                    </div>
+                    <div class="dev-info text-center">
+                        <h3 class="dev-name">Rizkmah Lailatul R</h3>
+                        <p class="dev-role text-primary">UI/UX Designer</p>
+                        <p class="dev-bio text-muted text-small">Mahasiswa Teknik Informatika. Merancang tampilan
+                            antarmuka yang bersih, responsif, dan ramah pengguna.</p>
+                        <div class="dev-links">
+                            <a href="#" class="dev-social" aria-label="LinkedIn">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                    </path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="#" class="dev-social" aria-label="Instagram">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Developer 3 -->
+                <div class="card dev-card animate-scroll">
+                    <div class="dev-img-wrapper">
+                        <!-- FOTO DEV 3 (User tinggal ganti file lokal) -->
+                        <img src="images/dev-3.png" alt="Developer KKN 3" class="dev-img">
+                    </div>
+                    <div class="dev-info text-center">
+                        <h3 class="dev-name">Cinta Wardana</h3>
+                        <p class="dev-role text-primary">Front-End Developer</p>
+                        <p class="dev-bio text-muted text-small">Mengembangkan UI web responsif, peta koordinat spasial
+                            interaktif, dan integrasi data profil pengguna.</p>
+                        <div class="dev-links">
+                            <a href="#" class="dev-social" aria-label="GitHub">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="#" class="dev-social" aria-label="Instagram">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anggota KKN Lainnya (Nama Saja) -->
+            <div class="kkn-subtitle mt-5 mb-4 text-center">
+                <span class="sub-tag">Anggota KKN Tematik Lainnya</span>
+            </div>
+
+            <div class="kkn-members-list animate-scroll">
+                <div class="member-badge"><span>Fitriani Darwin</span></div>
+                <div class="member-badge"><span>Muhammad Owen</span></div>
+                <div class="member-badge"><span>Chrisna Putra</span></div>
+                <div class="member-badge"><span>Muhammmad Nurhidayat</span></div>
+                <div class="member-badge"><span>Kayla Hafizah</span></div>
+                <div class="member-badge"><span>Devitha Arthamevia</span></div>
+                <div class="member-badge"><span>Prieta Aliefa</span></div>
+                <div class="member-badge"><span>Firmansyah</span></div>
+                <div class="member-badge"><span>Haidir Untung</span></div>
+                <div class="member-badge"><span>Relisya Ratrinidia</span></div>
+                <div class="member-badge"><span>Pri Handayani</span></div>
+                <div class="member-badge"><span>Relisya Ratrinidia</span></div>
+                <div class="member-badge"><span>Muh. Dzuqron</span></div>
+                <div class="member-badge"><span>Anggun Tri A</span></div>
+                <div class="member-badge"><span>Danis Dananjaya</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADMIN PANEL SECTION (Hanya Muncul Setelah Admin Login) -->
+    <section id="admin-panel" class="admin-section hidden">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                    <span class="admin-user-badge"><i class="ph ph-user"></i> Admin Kelurahan Abeli</span>
+                    <h2 class="section-title mt-1" style="font-size:1.6rem;">Dashboard Pengelolaan Berita &amp; Artikel
+                    </h2>
+                </div>
+                <button id="logout-btn" class="btn btn-secondary" style="padding:0.5rem 1rem;">
+                    <i class="ph ph-sign-out"></i> Logout Admin
+                </button>
+            </div>
+
+            <div class="admin-grid">
+                <!-- Form Card -->
+                <div class="admin-card">
+                    <h3 class="admin-card-title" id="form-title"><i class="ph ph-plus"></i> Tambah Artikel Berita Baru</h3>
+                    <form id="article-form">
+                        <input type="hidden" id="article-id" />
+                        <div class="form-group">
+                            <label for="title">Judul Artikel</label>
+                            <input type="text" id="title" class="form-control" placeholder="Masukkan judul artikel..."
+                                required />
+                        </div>
+                        <div class="form-group">
+                            <label for="content">Isi / Ringkasan Konten</label>
+                            <textarea id="content" class="form-control" rows="5"
+                                placeholder="Tuliskan berita atau laporan kegiatan..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Kategori Berita</label>
+                            <select id="category" class="form-control" required>
+                                <option value="" disabled selected>-- Pilih Kategori --</option>
+                                <option value="Berita Kelurahan">Berita Kelurahan</option>
+                                <option value="Daily Report KKN">Daily Report KKN</option>
+                                <option value="Edukasi Anti-Hoax">Edukasi Anti-Hoax</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="cover-image-url">Foto Sampul Artikel</label>
+                            <input type="text" id="cover-image-url" class="form-control"
+                                placeholder="URL atau path, contoh: images/galeri-musyawarah.png" />
+                            <small class="form-text-muted">Opsional. Gunakan path relatif dari folder situs atau URL
+                                lengkap (https://...).</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="cover-image-file">Atau unggah gambar dari perangkat</label>
+                            <input type="file" id="cover-image-file" class="form-control" accept="image/*" />
+                        </div>
+                        <div id="cover-image-preview-wrap" class="cover-preview-wrap hidden">
+                            <img id="cover-image-preview" class="cover-preview-img" alt="Pratinjau sampul artikel" />
+                            <button type="button" id="cover-image-clear" class="btn btn-secondary btn-sm cover-clear-btn">
+                                Hapus sampul
+                            </button>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" style="flex-grow:1; padding:0.65rem;">
+                                <i class="ph ph-floppy-disk"></i> Simpan Artikel
+                            </button>
+                            <button type="button" id="cancel-edit" class="btn btn-secondary hidden"
+                                style="padding:0.65rem 1rem;">
+                                Batal
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Table Card -->
+                <div class="admin-card">
+                    <h3 class="admin-card-title"><i class="ph ph-list-dashes"></i> Daftar Artikel &amp; Laporan (Database)</h3>
+                    <div class="table-responsive">
+                        <table id="articles-table" class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Sampul</th>
+                                    <th>Judul Artikel</th>
+                                    <th>Ringkasan</th>
+                                    <th>Kategori</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Rendered dynamically by admin.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>Kelurahan Abeli</h3>
+                <p class="text-muted text-small">Mewujudkan pelayanan prima yang responsif, transparan, dan melayani
+                    sepenuh hati.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navigasi</h4>
+                <a href="#hero">Beranda</a>
+                <a href="#profil">Profil & Visi</a>
+                <a href="#lokasi">Peta Lokasi</a>
+                <a href="#organisasi">Organisasi</a>
+                <a href="#struktur">Struktur Kepengurusan</a>
+                <a href="#galeri">Galeri</a>
+                <a href="#kkn">Tim Developer</a>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Kontak & Alamat</h4>
+                <p class="text-small">
+                    <strong>Alamat:</strong> Jl. Poros Abeli No. 12, Kel. Abeli, Kec. Abeli, Kota Kendari, Sulawesi
+                    Tenggara.
+                </p>
+                <p class="text-small">
+                    <strong>Jam Pelayanan:</strong> Senin - Jumat (08:00 - 16:00 WITA)
+                </p>
+                <p class="text-small">
+                    <strong>Email:</strong> kelurahan.abeli@kendarikota.go.id
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-wrapper">
+                <p>&copy; 2026 Kelurahan Abeli. All rights reserved.</p>
+                <p class="text-small">Dibuat dengan <i class="ph-fill ph-heart" style="color: #ef4444;"></i> oleh <span class="text-primary">Tim KKN Tematik Kelurahan
+                        Abeli</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet Map JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Script JS Utama -->
+    <script src="script.js"></script>
+    <!-- Admin Script -->
+    <script src="admin.js"></script>
+</body>
+
+</html>

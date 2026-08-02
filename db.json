@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Pelaksanaan Posyandu Balita & Lansia Kelurahan Abeli Bulan Ini",
+    "content": "Kegiatan Posyandu rutin kembali dilaksanakan di Kantor Kelurahan Abeli dengan tingkat partisipasi warga yang sangat tinggi. Layanan pemeriksaan kesehatan gratis dan pemberian makanan tambahan (PMT) berjalan lancar.",
+    "category": "Berita Kelurahan",
+    "author": "Tim Kelurahan Abeli",
+    "created_at": "2026-08-01T01:30:52.704Z"
+  },
+  {
+    "id": 2,
+    "title": "Daily Report KKN Hari Ke-12: Sosialisasi Saring Sebelum Sharing",
+    "content": "Tim KKN Tematik sukses menyelenggarakan workshop literasi digital untuk pemuda karang taruna dan ibu-ibu PKK. Materi berfokus pada verifikasi berita palsu (hoax) dan keamanan media sosial.",
+    "category": "Daily Report KKN",
+    "author": "Tim KKN Tematik",
+    "created_at": "2026-08-01T01:30:52.706Z"
+  },
+  {
+    "id": 3,
+    "title": "Panduan Praktis Mengenali Ciri-Ciri Berita Hoax & Deepfake AI",
+    "content": "Perkembangan AI memudahkan rekayasa foto dan suara (deepfake). Pastikan selalu memeriksa sumber berita melalui situs terpercaya seperti CekFakta.com atau TurnBackHoax.id sebelum menyebarkannya.",
+    "category": "Edukasi Anti-Hoax",
+    "author": "Tim Redaksi Anti-Hoax",
+    "created_at": "2026-08-01T01:30:52.706Z"
+  }
+]
