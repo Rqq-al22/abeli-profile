@@ -17,6 +17,15 @@ app.use(express.json({ limit: '10mb' }));
 // Serve static frontend files (index.html, admin.js, admin.css, etc.)
 app.use(express.static(__dirname));
 
+// Serve index.html on root GET /
+app.get('/', (req, res) => {
+  const indexPath = path.join(__dirname, 'index.html');
+  if (fs.existsSync(indexPath)) {
+    return res.sendFile(indexPath);
+  }
+  res.status(404).send('index.html tidak ditemukan');
+});
+
 // ============================================================
 // DATABASE CONNECTIONS
 // ============================================================
@@ -458,6 +467,16 @@ app.delete('/api/articles/:id', async (req, res) => {
   let articles = readLocalDB().filter(a => String(a.id) !== String(id));
   writeLocalDB(articles);
   res.json({ success: true });
+});
+
+// Fallback GET route untuk menyajikan index.html untuk semua route non-API
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api')) return next();
+  const indexPath = path.join(__dirname, 'index.html');
+  if (fs.existsSync(indexPath)) {
+    return res.sendFile(indexPath);
+  }
+  next();
 });
 
 // ============================================================
