@@ -5,6 +5,16 @@
       "source": "/api/(.*)",
       "destination": "/api/index.js"
     }
+  ],
+  "styles": [
+    {
+      "rel": "stylesheet",
+      "href": "/style.css"
+    },
+    {
+      "rel": "stylesheet",
+      "href": "/admin.css"
+    }
   ]
 }
 
