@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Publik &amp; Kontak - Kelurahan Abeli</title>
+
+    <!-- Meta SEO -->
+    <meta name="description"
+        content="Informasi Layanan Publik, Persyaratan Pengurusan Surat Keterangan, Jam Operasional Kantor, dan Kontak Resmi Kelurahan Abeli, Kota Kendari." />
+    <meta name="keywords" content="Layanan Abeli, Surat Keterangan Domisili Abeli, Jam Pelayanan Kelurahan Abeli, Kontak Lurah Abeli">
+    <meta name="author" content="Tim KKN Tematik Kelurahan Abeli">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Style CSS Utama -->
+    <link rel="stylesheet" href="/style.css">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <!-- NAVIGASI / HEADER -->
+    <header class="navbar-container">
+        <div class="navbar-wrapper container">
+            <a href="index.html" class="navbar-logo">
+                <div class="logo-images">
+                    <img src="images/logo-kendari.png" alt="Logo Kota Kendari" class="logo-img">
+                    <img src="images/logo-kkn.png" alt="Logo KKN Tematik" class="logo-img">
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">KELURAHAN ABELI</span>
+                    <span class="logo-subtitle">Kec. Abeli, Kota Kendari</span>
+                </div>
+            </a>
+
+            <nav class="navbar-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Beranda</a>
+                <a href="profil.html" class="nav-link">Profil Kelurahan</a>
+                <a href="index.html#berita" class="nav-link">Berita &amp; Pengumuman</a>
+                <a href="index.html#antihoax" class="nav-link">Edukasi &amp; Cek Fakta</a>
+                <a href="layanan.html" class="nav-link active">Layanan &amp; Surat</a>
+            </nav>
+
+            <div class="nav-actions-desktop">
+                <a href="index.html" class="btn btn-primary btn-sm">
+                    &larr; Kembali ke Beranda
+                </a>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- SUBPAGE HERO BANNER -->
+    <section class="subpage-hero">
+        <div class="container">
+            <h1 class="subpage-title animate-slide-up">Layanan Publik &amp; Pengurusan Surat</h1>
+            <div class="subpage-breadcrumb animate-slide-up">
+                <a href="index.html">Beranda</a> &rsaquo; <span>Layanan Publik</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PANDUAN PENGURUSAN SURAT & LAYANAN -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="section-tag">Prosedur Administrasi</div>
+                <h2 class="section-title">Syarat &amp; Prosedur Pengurusan Surat</h2>
+                <p class="section-desc">Panduan bagi warga Kelurahan Abeli yang memerlukan pelayanan pengantar atau surat keterangan resmi.</p>
+            </div>
+
+            <div class="grid grid-2 gap-4 mt-4">
+                <!-- Surat Keterangan Domisili -->
+                <div class="service-guide-card animate-scroll">
+                    <h3><i class="ph ph-file-text text-primary"></i> Surat Keterangan Domisili</h3>
+                    <p class="text-muted">Diperlukan untuk kepengurusan administrasi tempat tinggal atau pembukaan usaha.</p>
+                    <ul class="req-list">
+                        <li>Surat Pengantar dari Ketua RT &amp; RW setempat.</li>
+                        <li>Fotokopi Kartu Tanda Penduduk (KTP) pemohon.</li>
+                        <li>Fotokopi Kartu Keluarga (KK).</li>
+                        <li>Pas foto 3x4 berwarna (2 lembar).</li>
+                    </ul>
+                </div>
+
+                <!-- Surat Keterangan Tidak Mampu (SKTM) -->
+                <div class="service-guide-card animate-scroll">
+                    <h3><i class="ph ph-hand-heart text-teal"></i> Surat Keterangan Tidak Mampu (SKTM)</h3>
+                    <p class="text-muted">Untuk keperluan beasiswa sekolah, keringanan rumah sakit, atau bantuan sosial.</p>
+                    <ul class="req-list">
+                        <li>Surat Pengantar dari Ketua RT/RW setempat.</li>
+                        <li>Fotokopi KTP &amp; KK seluruh anggota keluarga.</li>
+                        <li>Bukti rekening listrik atau foto kondisi rumah.</li>
+                        <li>Pernyataan tidak mampu bermaterai 10.000.</li>
+                    </ul>
+                </div>
+
+                <!-- Surat Pengantar Usaha (UMKM) -->
+                <div class="service-guide-card animate-scroll">
+                    <h3><i class="ph ph-storefront text-gold"></i> Surat Keterangan Usaha (SKU)</h3>
+                    <p class="text-muted">Diperlukan untuk pengajuan IUMK, kredit usaha rakyat (KUR), atau izin perbankan.</p>
+                    <ul class="req-list">
+                        <li>Surat Pengantar RT/RW lokasi usaha.</li>
+                        <li>Fotokopi KTP &amp; KK pemohon.</li>
+                        <li>Foto tempat kegiatan usaha aktif di Abeli.</li>
+                    </ul>
+                </div>
+
+                <!-- Surat Keterangan Kelahiran / Kematian -->
+                <div class="service-guide-card animate-scroll">
+                    <h3><i class="ph ph-identification-card text-purple"></i> Surat Keterangan Kelahiran / Kematian</h3>
+                    <p class="text-muted">Untuk penerbitan Akta Kelahiran atau Akta Kematian di Disdukcapil Kota Kendari.</p>
+                    <ul class="req-list">
+                        <li>Surat Bidan/Rumah Sakit atau Surat Pengantar RT/RW.</li>
+                        <li>Fotokopi KK &amp; KTP Orang Tua / Almarhum.</li>
+                        <li>KTP 2 orang saksi warga setempat.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JAM PELAYANAN & KONTAK -->
+    <section class="section bg-light bg-pattern-dots">
+        <div class="container">
+            <div class="grid grid-2 gap-4 align-center">
+                <div class="card contact-card animate-scroll">
+                    <h3 class="card-title mb-3"><i class="ph ph-clock text-primary"></i> Jam Operasional Pelayanan</h3>
+                    <div class="ident-list">
+                        <div class="ident-row"><div><strong>Senin – Kamis:</strong> 08:00 – 16:00 WITA</div></div>
+                        <div class="ident-row"><div><strong>Jumat:</strong> 08:00 – 16:30 WITA</div></div>
+                        <div class="ident-row"><div><strong>Sabtu &amp; Minggu:</strong> Libur (Pelayanan Darurat via RT/RW)</div></div>
+                    </div>
+                </div>
+
+                <div class="card contact-card animate-scroll">
+                    <h3 class="card-title mb-3"><i class="ph ph-map-pin text-teal"></i> Alamat &amp; Kontak Kantor</h3>
+                    <div class="ident-list">
+                        <div class="ident-row"><div><strong>Alamat:</strong> Jl. Poros Abeli No. 12, Kel. Abeli, Kec. Abeli, Kota Kendari</div></div>
+                        <div class="ident-row"><div><strong>Email Resmi:</strong> kelurahan.abeli@kendarikota.go.id</div></div>
+                        <div class="ident-row"><div><strong>Telepon:</strong> (0401) 123 456</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-bottom-wrapper text-center">
+            <p>&copy; 2026 Kelurahan Abeli. All rights reserved. | Dibuat oleh Tim KKN Tematik Kelurahan Abeli</p>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
